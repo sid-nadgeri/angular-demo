@@ -16,6 +16,7 @@ export class UserListComponent implements OnInit {
   posts: Posts[];
   comments: Comments[];
   filteredComments: any;
+  show = 3;
   // TODO - Add loader to show server behaviour.
   private loading: boolean = false;
   constructor(private demoService: DemoService) {}
@@ -43,4 +44,5 @@ export class UserListComponent implements OnInit {
       this.comments = data;
     });
   }
+  showAllPosts() {}
 }
