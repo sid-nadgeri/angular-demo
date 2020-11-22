@@ -13,6 +13,7 @@ import { MatListModule } from "@angular/material/list";
 import { MatGridListModule } from "@angular/material/grid-list";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
+import { MatCardModule } from "@angular/material/card";
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { MatIconModule } from "@angular/material/icon";
     MatGridListModule,
     MatButtonModule,
     MatIconModule,
+    MatCardModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false
     }),

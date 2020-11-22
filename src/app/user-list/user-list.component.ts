@@ -21,6 +21,7 @@ export class UserListComponent {
 
   showUserPosts(userId: number) {
     this.filteredPosts = posts.filter(p => userId == p.userId);
+    this.filteredComments = null;
   }
 
   showPostComments(postId: number) {
