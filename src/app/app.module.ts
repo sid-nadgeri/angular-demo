@@ -6,8 +6,6 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { AppComponent } from "./app.component";
 import { UserListComponent } from "./user-list/user-list.component";
 import { HttpClientModule } from "@angular/common/http";
-import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
-import { InMemoryDataService } from "./in-memory-data-service";
 
 import { MatListModule } from "@angular/material/list";
 import { MatGridListModule } from "@angular/material/grid-list";
@@ -25,9 +23,6 @@ import { MatCardModule } from "@angular/material/card";
     MatButtonModule,
     MatIconModule,
     MatCardModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
-      dataEncapsulation: false
-    }),
     RouterModule.forRoot([{ path: "", component: UserListComponent }])
   ],
   declarations: [AppComponent, UserListComponent],
