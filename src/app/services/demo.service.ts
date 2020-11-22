@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, throwError } from "rxjs";
 import { catchError, map } from "rxjs/operators";
+import { Comments } from "../comments";
 import { Posts } from "../posts";
 import { User } from "../users";
 
@@ -29,6 +30,16 @@ export class DemoService {
       }),
       catchError(error => {
         return throwError("Something went wrong in fetching posts!");
+      })
+    );
+  }
+  getComments(postId: number): Observable<Comments[]> {
+    return this.http.get(this.baseURL + "comments?postId=" + postId).pipe(
+      map((data: Comments[]) => {
+        return data;
+      }),
+      catchError(error => {
+        return throwError("Something went wrong in fetching comments!");
       })
     );
   }

@@ -12,6 +12,7 @@ import { MatGridListModule } from "@angular/material/grid-list";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { MatCardModule } from "@angular/material/card";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { MatCardModule } from "@angular/material/card";
     MatButtonModule,
     MatIconModule,
     MatCardModule,
+    MatProgressSpinnerModule,
     RouterModule.forRoot([{ path: "", component: UserListComponent }])
   ],
   declarations: [AppComponent, UserListComponent],

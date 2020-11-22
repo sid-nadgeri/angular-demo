@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 
 import { Posts } from "../posts";
-import { comments } from "../comments";
+import { Comments, comments } from "../comments";
 import { DemoService } from "../services/demo.service";
 import { User } from "../users";
 
@@ -14,9 +14,9 @@ export class UserListComponent implements OnInit {
   users: User[];
   firstName: string;
   posts: Posts[];
-  comments = comments;
-  filteredPosts: any;
+  comments: Comments[];
   filteredComments: any;
+  // TODO - Add loader to show server behaviour.
   private loading: boolean = false;
   constructor(private demoService: DemoService) {}
 
@@ -31,7 +31,6 @@ export class UserListComponent implements OnInit {
   }
 
   showUserPosts(id: number) {
-    //this.filteredPosts = posts.filter(p => userId == p.userId);
     this.demoService.getPosts(id).subscribe(data => {
       this.posts = data;
       this.loading = false;
@@ -40,14 +39,8 @@ export class UserListComponent implements OnInit {
   }
 
   showPostComments(postId: number) {
-    console.log(postId);
-    this.filteredComments = comments.filter(c => postId == c.id);
-    console.log(this.filteredComments);
+    this.demoService.getComments(postId).subscribe(data => {
+      this.comments = data;
+    });
   }
 }
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/

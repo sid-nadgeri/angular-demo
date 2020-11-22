@@ -1,5 +1,4 @@
 <h2>Users List</h2>
-
 <div *ngFor="let user of users" class="button-row">
 	<button type="button" mat-raised-button color="primary" (click)="showUserPosts(user.id)">
     {{user.name}}</button>
@@ -19,8 +18,8 @@
           </button>
 				</div>
 			</mat-list-item>
-			<div *ngIf="filteredComments">
-				<div *ngFor="let comment of filteredComments">
+			<div *ngIf="comments">
+				<div *ngFor="let comment of comments">
 					<mat-card class="example-card">
 						<mat-card-header>
 							<div mat-card-avatar>
