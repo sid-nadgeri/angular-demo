@@ -6,8 +6,8 @@
 </div>
 
 <mat-list role="list">
-	<div *ngIf="filteredPosts">
-		<div *ngFor="let post of filteredPosts">
+	<div *ngIf="posts">
+		<div *ngFor="let post of posts">
 			<mat-list-item>
 				<div class="post">
 					<div>Title: {{post.title}}</div>

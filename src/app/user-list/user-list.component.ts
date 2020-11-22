@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 
-import { posts } from "../posts";
+import { Posts } from "../posts";
 import { comments } from "../comments";
 import { DemoService } from "../services/demo.service";
 import { User } from "../users";
@@ -13,23 +13,29 @@ import { User } from "../users";
 export class UserListComponent implements OnInit {
   users: User[];
   firstName: string;
-  posts = posts;
+  posts: Posts[];
   comments = comments;
   filteredPosts: any;
   filteredComments: any;
+  private loading: boolean = false;
   constructor(private demoService: DemoService) {}
 
   ngOnInit() {
-    this.users = this.demoService.getUsers().subscribe(data => {
+    this.demoService.getUsers().subscribe(data => {
       this.users = data;
+      this.loading = false;
     });
   }
   share() {
     window.alert("The product has been shared!");
   }
 
-  showUserPosts(userId: number) {
-    this.filteredPosts = posts.filter(p => userId == p.userId);
+  showUserPosts(id: number) {
+    //this.filteredPosts = posts.filter(p => userId == p.userId);
+    this.demoService.getPosts(id).subscribe(data => {
+      this.posts = data;
+      this.loading = false;
+    });
     this.filteredComments = null;
   }
 

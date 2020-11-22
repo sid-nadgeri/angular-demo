@@ -23,3 +23,7 @@ can be found in the LICENSE file at https://angular.io/license
   background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
   background-size: cover;
 }
+
+.mat-raised-button:hover {
+  background-color: yellow;
+}
