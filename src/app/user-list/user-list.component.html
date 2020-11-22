@@ -1,0 +1,27 @@
+<h2>User List</h2>
+
+<div *ngFor="let user of users" class="button-row">
+	<button type="button" mat-raised-button color="primary" (click)="showUserPosts(user.id)">{{user.username}}</button>
+</div>
+
+<mat-list role="list">
+	<div *ngIf="filteredPosts">
+		<div *ngFor="let post of filteredPosts">
+			<mat-list-item>
+				<div class="post">
+					<div>Title: {{post.title}}</div>
+					<div>Body: {{post.body}}</div>
+				</div>
+				<div>
+					<button mat-mini-fab>
+            <mat-icon>+</mat-icon>
+            </button>
+				</div>
+			</mat-list-item>
+		</div>
+	</div>
+</mat-list>
+
+<!-- Copyright Google LLC. All
+				Rights Reserved. Use of this source code is governed by an MIT-style license that can be found in the
+				LICENSE file at https://angular.io/license -->
