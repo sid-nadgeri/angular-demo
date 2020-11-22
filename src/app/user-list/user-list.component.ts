@@ -20,7 +20,7 @@ export class UserListComponent implements OnInit {
   constructor(private demoService: DemoService) {}
 
   ngOnInit() {
-    this.users = this.demoService.getUsers1().subscribe(data => {
+    this.users = this.demoService.getUsers().subscribe(data => {
       this.users = data;
     });
   }

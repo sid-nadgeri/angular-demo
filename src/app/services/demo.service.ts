@@ -11,11 +11,7 @@ export class DemoService {
   baseURL: string = "https://jsonplaceholder.typicode.com/";
   constructor(private http: HttpClient) {}
 
-  getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.baseURL + "users");
-  }
-
-  getUsers1() {
+  getUsers() {
     return this.http.get(this.baseURL + "users").pipe(
       map((data: User[]) => {
         return data;
