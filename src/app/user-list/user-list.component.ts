@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 
 import { Posts } from "../posts";
-import { Comments, comments } from "../comments";
+import { Comments } from "../comments";
 import { DemoService } from "../services/demo.service";
 import { User } from "../users";
 
