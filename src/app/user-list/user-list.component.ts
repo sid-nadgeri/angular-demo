@@ -24,7 +24,9 @@ export class UserListComponent {
   }
 
   showPostComments(postId: number) {
-    this.filteredComments = comments.filter(c => postId == c.postId);
+    console.log(postId);
+    this.filteredComments = comments.filter(c => postId == c.id);
+    console.log(this.filteredComments);
   }
 }
 

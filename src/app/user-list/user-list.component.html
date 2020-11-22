@@ -13,9 +13,9 @@
 					<div>Body: {{post.body}}</div>
 				</div>
 				<div>
-					<button mat-mini-fab>
-            <mat-icon>+</mat-icon>
-            </button>
+					<button mat-mini-fab (click)="showPostComments(post.id)">
+            <mat-icon>add</mat-icon>
+          </button>
 				</div>
 			</mat-list-item>
 		</div>
