@@ -16,6 +16,7 @@ export class UserListComponent implements OnInit {
   posts: Posts[];
   comments: Comments[];
   filteredComments: any;
+  showComments: boolean[];
   show = 3;
   // TODO - Add loader to show server behaviour.
   private loading: boolean = false;
@@ -35,14 +36,18 @@ export class UserListComponent implements OnInit {
     this.demoService.getPosts(id).subscribe(data => {
       this.posts = data;
       this.loading = false;
+       this.showComments = this.posts.map(p => false);
     });
+   
     this.filteredComments = null;
+    console.log(this.showComments);
   }
 
-  showPostComments(postId: number) {
+  showPostComments(postId: number, index: number) {
     this.demoService.getComments(postId).subscribe(data => {
       this.comments = data;
     });
+    this.showComments[index] = true;
   }
   showAllPosts() {}
 }
