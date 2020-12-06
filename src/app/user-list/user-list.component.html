@@ -1,7 +1,7 @@
 <h2>Users List</h2>
 <div *ngFor="let user of users" class="button-row">
 	<button type="button" mat-raised-button color="primary" (click)="showUserPosts(user.id)">
-    {{user.name}}</button>
+    {{user.name| slice:0:(user.name).indexOf(' ')}}</button>
 </div>
 
 <mat-list role="list">
